@@ -20,7 +20,7 @@ jobs:
       - run: pip install -r requirements.txt
       - run: pytest
         env:
-          DATABASE_URL: sqlite:///:memory:
+          DATABASE_URL: "sqlite:///:memory:"
           JWT_SECRET: test-secret-for-ci
           CORS_ORIGIN_REGEX: ""
 
@@ -39,4 +39,4 @@ jobs:
       - run: npm ci
       - run: npm run build
         env:
-          NEXT_PUBLIC_API_URL: http://localhost:8000
+          NEXT_PUBLIC_API_URL: "http://localhost:8000"
